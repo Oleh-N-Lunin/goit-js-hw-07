@@ -22,3 +22,13 @@ const images = [
   },
 ];
 
+const galleryMarkup = pictures => {
+  return pictures.map(picture => {
+    document.querySelector('#gallery')
+    .insertAdjacentHTML('beforeend', `<li class="imageList"><img class="imageItem" src="${picture.url}" alt="${picture.alt}"></li>`);
+  });
+};
+const doMarkup = galleryMarkup(images);
+
+
+
