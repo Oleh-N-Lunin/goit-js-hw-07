@@ -16,3 +16,18 @@
     padding: 40px;
     height: 300px;
 }
+
+
+/* STYLES FOR TASK #6 */
+
+#validation-input {
+  border: 3px solid #bdbdbd;
+}
+
+#validation-input.valid {
+  border-color: #4caf50;
+}
+
+#validation-input.invalid {
+  border-color: #f44336;
+}
