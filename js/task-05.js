@@ -12,7 +12,9 @@ const refs = {
     output: document.querySelector('#name-output'),
 };
 
-refs.input.addEventListener('input', changeName => {
-    refs.output.textContent = changeName.currentTarget.value  
-});
+const addUserName = () => {
+    let name = refs.input.value.trim();
+    refs.output.textContent = name.length > 0 ? name : 'незнакомец';
+};
 
+refs.input.addEventListener('input', addUserName);
