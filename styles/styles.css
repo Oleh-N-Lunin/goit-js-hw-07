@@ -31,3 +31,10 @@
 #validation-input.invalid {
   border-color: #f44336;
 }
+
+/* STYLES FOR TASK #8 */
+
+#boxes {
+  display: flex;
+  flex-direction: row;
+}

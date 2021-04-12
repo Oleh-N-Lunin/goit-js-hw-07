@@ -23,3 +23,34 @@
 
 <div id="boxes"></div>
 */
+
+const refs = {
+    inputAmout: document.querySelector('input'),
+    renderBtn: document.querySelector('button[data-action="render"]'),
+    destroyBtn: document.querySelector('button[data-action="destroy"]'),
+    boxes: document.querySelector('#boxes'),
+};
+
+refs.renderBtn.addEventListener('click', createBoxes);
+
+function createBoxes() {
+    let currentValue = refs.inputAmout.value;
+    for (let i = 0; i < currentValue; i++) {
+        const div = document.createElement('div');
+        div.style.height = 30+(i*10) +'px';
+        div.style.width = 30+(i*10)+'px';
+          const randomRgb = () => {
+             const rgbNum = () => Math.floor(Math.random() * 256);
+             const r = rgbNum();
+             const g = rgbNum();
+             const b = rgbNum();
+             return `rgb(${r},${g},${b})`;
+        };
+        div.style.backgroundColor = randomRgb()
+        refs.boxes.appendChild(div);
+    }
+};
+
+refs.destroyBtn.addEventListener('click', function() {
+    refs.boxes.innerHTML = '';
+});
